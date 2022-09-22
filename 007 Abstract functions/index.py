@@ -8,7 +8,6 @@ cores("azul", "branco", "vermelho")
 
 # função abstrata, não preciso especificar nada antes, mando do jeito que eu quiser
 
-
 def cores(*t):
 
     for i in t:
