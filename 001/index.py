@@ -38,3 +38,10 @@ print(len(name))
 title="curso de python no youtube totalmente grátis"
 newTitle= title.split(" ")
 print(newTitle)
+
+#in achei util pra fazer pesquisa
+if ("Python".upper() in title.upper()): #usando o upper para deixar todo mundo maiusculo e permitir a busca independente de como foi escrito
+    print(title)
+
+if ("javascript" not in title):
+    print("Este curso não é de javascript")
