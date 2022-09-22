@@ -34,3 +34,7 @@ print(floatNumber)
 #lenght
 print(len(name))
 
+#split separada cada palavra e coloca em um array
+title="curso de python no youtube totalmente grátis"
+newTitle= title.split(" ")
+print(newTitle)
