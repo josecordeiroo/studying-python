@@ -1,10 +1,28 @@
-soma= lambda n1, n2: n1 + n2
-print(soma(20, 30))
+class Carro:
+    velMax = 0
+    ligado = False
+    cor = ""
+
+    def __init__(self, v, l, c):
+        self.velMax = v
+        self.ligado = l
+        self.cor = c
+
+    def show(self):
+        print(f"Velocidade máxima: {self.velMax}")
+        print(f"Cor: {self.cor}")
+        estado = "Sim" if self.ligado else "Não"
+        print(f"Ligado: {estado}")
+
+    def ligar(self):
+        self.ligado = True
 
 
-ratata=lambda x, func: x + func(x) # A lambda sempre retorna o resultado
+c1 = Carro(200, False, "Preto")
 
-def soma(number):
-    return number + 10
+c1.show()
 
-print(ratata(10, soma))
+c1.ligar()
+
+c1.show()
+
