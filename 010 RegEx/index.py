@@ -7,3 +7,4 @@ res=re.findall("a", texto) #esse retorna todos os encontrados
 res=re.search("letra", texto) #esse somente indica se encontrou ou nao
 
 res=re.split("\s", texto) # cria um array com cada palavra entre os espaços
+
