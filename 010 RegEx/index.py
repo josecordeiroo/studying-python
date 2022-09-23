@@ -4,6 +4,6 @@ texto="quando surge o alviverde imponente no gramado em que a luta o aguarda"
 
 res=re.findall("a", texto) #esse retorna todos os encontrados
 
-print(f"Letra encontrada {len(res)} vezes.")
-
 res=re.search("letra", texto) #esse somente indica se encontrou ou nao
+
+res=re.split("\s", texto) # cria um array com cada palavra entre os espaços
