@@ -3,7 +3,6 @@ from sqlite3 import Error, connect
 
 # Criar conexão
 
-
 def DatabaseConnection():
     local = "D:\\OneDrive\\Developer\\SQL\\banco\\agenda.db"
     con = None
@@ -13,27 +12,27 @@ def DatabaseConnection():
         print(ex)
     return con
 
-
 vcon = DatabaseConnection()
 
-# Criar tabela
-vsql = """CREATE TABLE tb_contacts(
-            N_IDCONTACT INTEGER PRIMARY KEY AUTOINCREMENT,
-            T_NAMECONTACT VARCHAR(30),
-            T_NUMBERCONTACT VARCHAR(14),
-            T_EMAILCONTACT VARCHAR(30)
-        );"""
+# Criar conexão
+
+# Criar entrada no banco
+
+name="José Cordeiro Neto"
+number="11984550603"
+email="zecaxcr@gmail.com"
+
+vsql = "INSERT INTO tb_contacts(T_NAMECONTACT, T_NUMBERCONTACT, T_EMAILCONTACT) VALUES('"+name+"','"+number+"', '"+email+"')" #usando as variaveis
 
 
-def tableCreate(connection, sql):
+def insert(connection, sql):
     try:
         c = connection.cursor()
         c.execute(sql)
-        print("Tabela criada com sucesso")
+        connection.commit() #necessário o commit, se não não salva
+        print("Registro Inserido")
     except Error as ex:
         print(ex)
 
 
-tableCreate(vcon, vsql)
-
-vcon.close()
+insert(vcon, vsql) #comando
