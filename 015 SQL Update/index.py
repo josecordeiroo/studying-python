@@ -30,7 +30,7 @@ def update(connection, sql):
 
 
                         #CUIDADO, se não usar o WHERE voce deleta todos os dados do banco
-                        
-vsql="DELETE FROM tb_contacts WHERE N_IDCONTACT=4"
+
+vsql="UPDATE tb_contacts SET N_IDCONTACT=2 WHERE N_IDCONTACT=5"
 update(vcon, vsql) #comando
 
