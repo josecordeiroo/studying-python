@@ -35,10 +35,8 @@ search(vcon, vsql)  # comando
 
 response = search(vcon, vsql)
 
-for r in response:
-    print(r)
-
-
+# for r in response:
+#     # print(r)
 
 # Search one 
 def searchOne(connection, sql):
@@ -49,6 +47,20 @@ def searchOne(connection, sql):
     except Error as ex:
         print(ex)
 
-
 vsqlOne = "SELECT * FROM tb_contacts WHERE N_IDCONTACT=5"
-print(searchOne(vcon, vsqlOne))
+# print(searchOne(vcon, vsqlOne))
+
+
+#search by letter
+def searchSpecific(connection, sql):
+    try:
+        c = connection.cursor()
+        c.execute(sql)
+        return c.fetchall()
+    except Error as ex:
+        print(ex)
+
+
+vsqlOne = "SELECT * FROM tb_contacts WHERE T_NAMECONTACT LIKE '%o%'" #tudo que tiver a letra o
+
+print(searchSpecific(vcon, vsqlOne))
