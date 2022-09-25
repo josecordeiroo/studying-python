@@ -61,6 +61,6 @@ def searchSpecific(connection, sql):
         print(ex)
 
 
-vsqlOne = "SELECT * FROM tb_contacts WHERE T_NAMECONTACT LIKE '%o%'" #tudo que tiver a letra o
+vsqlOne = "SELECT * FROM tb_contacts WHERE T_NAMECONTACT LIKE '%o%'" #tudo que tiver a letra o (%o => Terminam com a letra o || o% => começam com a letra o)
 
 print(searchSpecific(vcon, vsqlOne))
