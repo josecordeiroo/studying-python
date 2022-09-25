@@ -3,6 +3,7 @@ from sqlite3 import Error, connect
 
 # Criar conexão
 
+
 def DatabaseConnection():
     local = "D:\\OneDrive\\Developer\\SQL\\banco\\agenda.db"
     con = None
@@ -12,25 +13,42 @@ def DatabaseConnection():
         print(ex)
     return con
 
+
 vcon = DatabaseConnection()
 
 # Criar conexão
 
-# Atualizar entrada no banco
 
-def update(connection, sql):
+
+#Search all
+def search(connection, sql):
     try:
         c = connection.cursor()
         c.execute(sql)
-        connection.commit() #necessário o commit, se não não salva
+        return c.fetchall()
     except Error as ex:
         print(ex)
-    finally:
-        print("Atualizado com sucesso")
 
 
-                        #CUIDADO, se não usar o WHERE voce deleta todos os dados do banco
+vsql = "SELECT * FROM tb_contacts"
+search(vcon, vsql)  # comando
 
-vsql="UPDATE tb_contacts SET T_NAMECONTACT='João', T_NUMBERCONTACT='1155428455' WHERE N_IDCONTACT=1"
-update(vcon, vsql) #comando
+response = search(vcon, vsql)
 
+for r in response:
+    print(r)
+
+
+
+# Search one 
+def searchOne(connection, sql):
+    try:
+        c = connection.cursor()
+        c.execute(sql)
+        return c.fetchall()
+    except Error as ex:
+        print(ex)
+
+
+vsqlOne = "SELECT * FROM tb_contacts WHERE N_IDCONTACT=5"
+print(searchOne(vcon, vsqlOne))
