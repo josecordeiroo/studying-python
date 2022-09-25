@@ -31,6 +31,6 @@ def update(connection, sql):
 
                         #CUIDADO, se não usar o WHERE voce deleta todos os dados do banco
 
-vsql="UPDATE tb_contacts SET N_IDCONTACT=2 WHERE N_IDCONTACT=5"
+vsql="UPDATE tb_contacts SET T_NAMECONTACT='João', T_NUMBERCONTACT='1155428455' WHERE N_IDCONTACT=1"
 update(vcon, vsql) #comando
 
